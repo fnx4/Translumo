@@ -7,6 +7,7 @@ using Translumo.Translation.Deepl;
 using Translumo.Translation.Google;
 using Translumo.Translation.Papago;
 using Translumo.Translation.Yandex;
+using Translumo.Translation.OneRing;
 
 namespace Translumo.Translation
 {
@@ -35,6 +36,8 @@ namespace Translumo.Translation
                     return new PapagoTranslator(translatorConfiguration, _languageService, _logger);
                 case Translators.Google:
                     return new GoogleTranslator(translatorConfiguration, _languageService, _logger);
+                case Translators.OneRingTranslator:
+                    return new OneRingTranslator(translatorConfiguration, _languageService, _logger);
                 default:
                     throw new NotSupportedException();
             }
